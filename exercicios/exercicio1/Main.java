@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-    private static int numeroPalavras = 0;
+    static int numeroPalavras = 0;
     static final Map<String, Integer> palavrasIguais = new HashMap<>();
 
 
@@ -18,6 +18,7 @@ public class Main {
         String filePath = "D:\\projetos\\jorge\\exercicios\\exercicio1\\teste.txt";
         ArrayList<String> content = new ArrayList<>();
         ArrayList<Thread> threads = new ArrayList<>();
+        
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -67,7 +68,6 @@ public class Main {
 
         }
 
-        // Encontra todas as palavras mais frequentes
         List<String> maisFrequentes = new ArrayList<>();
         int maiorContagem = 0;
 
@@ -81,8 +81,7 @@ public class Main {
                 maisFrequentes.add(entry.getKey());
             }
         }
-
-        // Mostra o resultado
+        
         System.out.println("\nPalavra(s) mais frequente(s):");
         for (String palavra : maisFrequentes) {
             System.out.println("'" + palavra + "' apareceu " + maiorContagem + " vezes.");
